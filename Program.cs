@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace DotNet5_REST_API
+namespace DotNet5_REST_API_Core
 {
     public class Program
     {

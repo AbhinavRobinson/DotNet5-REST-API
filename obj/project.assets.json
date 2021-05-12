@@ -193,24 +193,30 @@
     ]
   },
   "packageFolders": {
-    "/home/abhinavr/.nuget/packages/": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/abhinavr/Desktop/Code/DotNet5-REST-API/DotNet5-REST-API.csproj",
-      "projectName": "DotNet5-REST-API",
-      "projectPath": "/home/abhinavr/Desktop/Code/DotNet5-REST-API/DotNet5-REST-API.csproj",
-      "packagesPath": "/home/abhinavr/.nuget/packages/",
-      "outputPath": "/home/abhinavr/Desktop/Code/DotNet5-REST-API/obj/",
+      "projectUniqueName": "D:\\MAINSTUFF\\ActiveProjects\\DotNet5-REST-API\\DotNet5-REST-API-Core.csproj",
+      "projectName": "DotNet5-REST-API-Core",
+      "projectPath": "D:\\MAINSTUFF\\ActiveProjects\\DotNet5-REST-API\\DotNet5-REST-API-Core.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "D:\\MAINSTUFF\\ActiveProjects\\DotNet5-REST-API\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/home/abhinavr/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -252,7 +258,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.203/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

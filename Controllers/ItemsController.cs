@@ -1,7 +1,7 @@
+using System;
 using DotNet5_REST_API.Repositories;
 using DotNet5_REST_API.Entities;
 
-using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,10 +20,17 @@ namespace DotNet5_REST_API.Controllers
 
     // GET /items
     [HttpGet]
-    public IEnumerable<Item> GetItems()
+    public ActionResult<IEnumerable<Item>> GetItems()
     {
       var items = repository.GetItems();
-      return items;
+
+      if (items is null)
+      {
+        return NotFound();
+      }
+
+
+      return Ok(items);
     }
 
     // GET /items/{id}
