@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "7fEhfJxb3qgO1Vj+LZ3RC6qAcrcFzoMIwJi9oiZy6fHMnsSQIxUZIQ8bUP6hK8/wDhMXKq8w5g6HuVXcm0HudQ==",
+  "success": true,
+  "projectFilePath": "/home/abhinavr/Desktop/Code/DotNet5-REST-API/DotNet5-REST-API.csproj",
+  "expectedPackageFiles": [
+    "/home/abhinavr/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/home/abhinavr/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/home/abhinavr/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "/home/abhinavr/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "/home/abhinavr/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "/home/abhinavr/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
