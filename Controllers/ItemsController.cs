@@ -11,11 +11,11 @@ namespace DotNet5_REST_API.Controllers
   [Route("items")]
   public class ItemsController : ControllerBase
   {
-    private readonly InMemItemsRepository repository;
+    private readonly IItemsRepository repository;
 
-    public ItemsController()
+    public ItemsController(IItemsRepository repository)
     {
-      repository = new InMemItemsRepository();
+      this.repository = repository;
     }
 
     // GET /items

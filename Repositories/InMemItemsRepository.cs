@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace DotNet5_REST_API.Repositories
 {
-  public class InMemItemsRepository
+  public class InMemItemsRepository : IItemsRepository
   {
     private readonly List<Item> items = new()
     {
