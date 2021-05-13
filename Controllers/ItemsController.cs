@@ -1,6 +1,8 @@
+using System.Linq;
 using System;
 using DotNet5_REST_API.Repositories;
 using DotNet5_REST_API.Entities;
+using DotNet5_REST_API.Dtos;
 
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
@@ -20,9 +22,15 @@ namespace DotNet5_REST_API.Controllers
 
     // GET /items
     [HttpGet]
-    public ActionResult<IEnumerable<Item>> GetItems()
+    public ActionResult<IEnumerable<ItemDto>> GetItems()
     {
-      var items = repository.GetItems();
+      var items = repository.GetItems().Select(item => new ItemDto
+      {
+        Id = item.Id,
+        Name = item.Name,
+        Price = item.Price,
+        CreatedDate = item.CreatedDate
+      });
 
       if (items is null)
       {

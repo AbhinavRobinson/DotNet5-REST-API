@@ -199,9 +199,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MAINSTUFF\\ActiveProjects\\DotNet5-REST-API\\DotNet5-REST-API-Core.csproj",
-      "projectName": "DotNet5-REST-API-Core",
-      "projectPath": "D:\\MAINSTUFF\\ActiveProjects\\DotNet5-REST-API\\DotNet5-REST-API-Core.csproj",
+      "projectUniqueName": "D:\\MAINSTUFF\\ActiveProjects\\DotNet5-REST-API\\DotNet5-REST-API.csproj",
+      "projectName": "DotNet5-REST-API",
+      "projectPath": "D:\\MAINSTUFF\\ActiveProjects\\DotNet5-REST-API\\DotNet5-REST-API.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
       "outputPath": "D:\\MAINSTUFF\\ActiveProjects\\DotNet5-REST-API\\obj\\",
       "projectStyle": "PackageReference",

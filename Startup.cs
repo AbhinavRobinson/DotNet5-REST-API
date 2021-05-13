@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using DotNet5_REST_API.Repositories;
 
-namespace DotNet5_REST_API_Core
+namespace DotNet5_REST_API
 {
   public class Startup
   {
@@ -33,7 +33,7 @@ namespace DotNet5_REST_API_Core
       services.AddControllers();
       services.AddSwaggerGen(c =>
       {
-        c.SwaggerDoc("v1", new OpenApiInfo { Title = "DotNet5_REST_API_Core", Version = "v1" });
+        c.SwaggerDoc("v1", new OpenApiInfo { Title = "DotNet5_REST_API", Version = "v1" });
       });
     }
 
@@ -44,7 +44,7 @@ namespace DotNet5_REST_API_Core
       {
         app.UseDeveloperExceptionPage();
         app.UseSwagger();
-        app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DotNet5_REST_API_Core v1"));
+        app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DotNet5_REST_API v1"));
       }
 
       app.UseHttpsRedirection();
