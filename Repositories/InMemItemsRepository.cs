@@ -7,7 +7,7 @@ namespace DotNet5_REST_API.Repositories
 {
   public class InMemItemsRepository : IItemsRepository
   {
-    private readonly List<Item> items = new()
+    private readonly List<Item> _items = new()
     {
       new Item
       {
@@ -34,29 +34,29 @@ namespace DotNet5_REST_API.Repositories
 
     public IEnumerable<Item> GetItems()
     {
-      return items;
+      return _items;
     }
 
     public Item GetItem(Guid id)
     {
-      return items.Where(item => item.Id == id).SingleOrDefault();
+      return _items.SingleOrDefault(item => item.Id == id);
     }
 
     public void CreateItem(Item item)
     {
-      items.Add(item);
+      _items.Add(item);
     }
 
     public void UpdateItem(Item item)
     {
-      var index = items.FindIndex(existingItem => existingItem.Id == item.Id);
-      items[index] = item;
+      var index = _items.FindIndex(existingItem => existingItem.Id == item.Id);
+      _items[index] = item;
     }
 
     public void DeleteItem(Guid id)
     {
-      var index = items.FindIndex(existingItem => existingItem.Id == id);
-      items.RemoveAt(index);
+      var index = _items.FindIndex(existingItem => existingItem.Id == id);
+      _items.RemoveAt(index);
     }
   }
 }

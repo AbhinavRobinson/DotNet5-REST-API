@@ -7,7 +7,7 @@ namespace DotNet5_REST_API
   {
     public static ItemDto AsDto(this Item item)
     {
-      return new ItemDto
+      return new()
       {
         Id = item.Id,
         Name = item.Name,

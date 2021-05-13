@@ -13,33 +13,26 @@ namespace DotNet5_REST_API.Controllers
   [Route("items")]
   public class ItemsController : ControllerBase
   {
-    private readonly IItemsRepository repository;
+    private readonly IItemsRepository _repository;
 
     public ItemsController(IItemsRepository repository)
     {
-      this.repository = repository;
+      this._repository = repository;
     }
 
     // GET /items
     [HttpGet]
     public ActionResult<IEnumerable<ItemDto>> GetItems()
     {
-      var items = repository.GetItems().Select(item => item.AsDto());
-
-      if (items is null)
-      {
-        return NotFound();
-      }
-
-
+      var items = _repository.GetItems().Select(item => item.AsDto());
       return Ok(items);
     }
 
     // GET /items/{id}
-    [HttpGet("{id}")]
+    [HttpGet("{id:guid}")]
     public ActionResult<ItemDto> GetItem(Guid id)
     {
-      var item = repository.GetItem(id);
+      var item = _repository.GetItem(id);
 
       if (item is null)
       {
@@ -61,15 +54,15 @@ namespace DotNet5_REST_API.Controllers
         CreatedDate = DateTimeOffset.UtcNow
       };
 
-      repository.CreateItem(item);
+      _repository.CreateItem(item);
       return CreatedAtAction(nameof(GetItem), new { id = item.Id }, item.AsDto());
     }
 
     // PUT /items/{id}
-    [HttpPut("{id}")]
+    [HttpPut("{id:guid}")]
     public ActionResult UpdateItem(Guid id, UpdateItemDto itemDto)
     {
-      var existingItem = repository.GetItem(id);
+      var existingItem = _repository.GetItem(id);
 
       if (existingItem is null)
       {
@@ -82,23 +75,23 @@ namespace DotNet5_REST_API.Controllers
         Price = itemDto.Price
       };
 
-      repository.UpdateItem(updatedItem);
+      _repository.UpdateItem(updatedItem);
 
       return NoContent();
     }
 
     // DELETE /items/{id}
-    [HttpDelete("{id}")]
+    [HttpDelete("{id:guid}")]
     public ActionResult DeleteItem(Guid id)
     {
-      var existingItem = repository.GetItem(id);
+      var existingItem = _repository.GetItem(id);
 
       if (existingItem is null)
       {
         return NotFound();
       }
 
-      repository.DeleteItem(id);
+      _repository.DeleteItem(id);
 
       return NoContent();
     }
