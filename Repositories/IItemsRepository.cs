@@ -8,5 +8,6 @@ namespace DotNet5_REST_API.Repositories
   {
     Item GetItem(Guid id);
     IEnumerable<Item> GetItems();
+    void CreateItem(Item item);
   }
 }

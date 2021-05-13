@@ -1,8 +1,8 @@
 using System.Linq;
 using System;
 using DotNet5_REST_API.Repositories;
-using DotNet5_REST_API.Entities;
 using DotNet5_REST_API.Dtos;
+using DotNet5_REST_API.Entities;
 
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
@@ -47,6 +47,22 @@ namespace DotNet5_REST_API.Controllers
       }
 
       return Ok(item.AsDto());
+    }
+
+    // POST /items
+    [HttpPost]
+    public ActionResult<ItemDto> CreateItem(CreateItemDto itemDto)
+    {
+      Item item = new()
+      {
+        Id = Guid.NewGuid(),
+        Name = itemDto.Name,
+        Price = itemDto.Price,
+        CreatedDate = DateTimeOffset.UtcNow
+      };
+
+      repository.CreateItem(item);
+      return CreatedAtAction(nameof(GetItem), new { id = item.Id }, item.AsDto());
     }
   }
 }
