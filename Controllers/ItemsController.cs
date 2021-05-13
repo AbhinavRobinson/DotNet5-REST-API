@@ -24,13 +24,7 @@ namespace DotNet5_REST_API.Controllers
     [HttpGet]
     public ActionResult<IEnumerable<ItemDto>> GetItems()
     {
-      var items = repository.GetItems().Select(item => new ItemDto
-      {
-        Id = item.Id,
-        Name = item.Name,
-        Price = item.Price,
-        CreatedDate = item.CreatedDate
-      });
+      var items = repository.GetItems().Select(item => item.AsDto());
 
       if (items is null)
       {
@@ -43,7 +37,7 @@ namespace DotNet5_REST_API.Controllers
 
     // GET /items/{id}
     [HttpGet("{id}")]
-    public ActionResult<Item> GetItem(Guid id)
+    public ActionResult<ItemDto> GetItem(Guid id)
     {
       var item = repository.GetItem(id);
 
@@ -52,7 +46,7 @@ namespace DotNet5_REST_API.Controllers
         return NotFound();
       }
 
-      return item;
+      return Ok(item.AsDto());
     }
   }
 }
